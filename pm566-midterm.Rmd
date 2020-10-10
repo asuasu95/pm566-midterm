@@ -2,7 +2,8 @@
 title: "pm566 midterm"
 author: "Changqing Su"
 date: "2020/10/9"
-output: html_document
+output: github_document
+always_allow_html: true
 ---
 
 ## Intoduction 
