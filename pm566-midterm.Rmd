@@ -97,6 +97,32 @@ Here we can see that the New York State has the highest proportionate mortality 
 It means that New York City has the most people died because of Covid-19.
 
 
+```{r, warning=F, message=F}
+pal2 <- colorBin("YlOrRd", domain = mergedata$`COVID-19 Deaths`)
+
+leaflet() %>%
+ addProviderTiles("CartoDB.Positron") %>%
+  setView(-98.483330, 38.712046, zoom = 4) %>% 
+  addPolygons(
+    data=mergedata,
+    fillColor = ~pal2(mergedata$`COVID-19 Deaths`),
+    fillOpacity = 0.7, 
+              weight = 0.2, 
+              smoothFactor = 0.2 
+  )%>%
+  addLegend(pal = pal2, 
+            values = mergedata$`COVID-19 Deaths`, 
+            position = "bottomright", 
+            title = "Total Deaths")
+  
+
+```
+According to this map, we can see that the New York State has the most Covid-19 deaths(more than 30,000).
+California has the second most Covid-19 deaths(more than 15,000). But comparing to the previous map, it does not have a high RMR. This means that California has a large number because of the large population.
+
+
+
+
 
 #### Compare the proportionate mortality ratio beween genders and age groups.
 
