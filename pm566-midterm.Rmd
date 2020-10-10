@@ -48,7 +48,7 @@ Here, we create a map of proportionate mortality ratio among the states.
 
 
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, results='hide'}
+```{r, echo=T, warning=FALSE, message=FALSE, results='hide'}
 library(tigris)
 states <- states(cb=T)
 ```
